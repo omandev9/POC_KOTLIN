@@ -1,10 +1,13 @@
-package com.example.kotlinrecyclerview
+package com.example.kotlinrecyclerview.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.util.Log
+import com.example.kotlinrecyclerview.APIService
+import com.example.kotlinrecyclerview.R
+import com.example.kotlinrecyclerview.RestClient
+import com.example.kotlinrecyclerview.model.UserList
 import com.example.kotlinrecyclerview.adapter.ListAdapterForRetrofit
 import com.example.kotlinrecyclerview.model.User
 import kotlinx.android.synthetic.main.activity_main_for_retrofit.*

@@ -1,11 +1,8 @@
-package com.example.kotlinrecyclerview
+package com.example.kotlinrecyclerview.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.widget.LinearLayout
-import com.example.kotlinrecyclerview.adapter.CustomAdapter
-import com.example.kotlinrecyclerview.model.User
+import com.example.kotlinrecyclerview.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

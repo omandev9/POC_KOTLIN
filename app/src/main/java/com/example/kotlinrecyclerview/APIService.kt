@@ -1,5 +1,6 @@
 package com.example.kotlinrecyclerview
 
+import com.example.kotlinrecyclerview.model.UserList
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
