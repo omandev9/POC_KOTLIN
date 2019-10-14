@@ -1,3 +1,3 @@
 package com.example.kotlinrecyclerview.model
 
-data class User(val name: String, val address: String)
+data class User(val title: String, val link: String, val question_id:String)
