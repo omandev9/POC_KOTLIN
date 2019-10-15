@@ -27,7 +27,7 @@ class ListAdapterForRetrofit(
         holder.link?.text = mQuestions[position].link
         holder.positionNumber?.text = mQuestions[position].question_id
         holder.containerView.setOnClickListener {
-            Toast.makeText(context, "Clicked on: " + holder.title.text, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Clicked on: " + holder.title.text, Toast.LENGTH_SHORT).show()
             context.startActivity(Intent(context, MainActivity::class.java))
         }
     }
