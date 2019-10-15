@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.example.kotlinrecyclerview.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class DataInputActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -20,8 +20,7 @@ import java.util.*
 class MainActivityForRetrofit : AppCompatActivity() {
 
     private var mApiService: APIService? = null
-
-    private var mAdapter: ListAdapterForRetrofit?= null;
+    private var mAdapter: ListAdapterForRetrofit?= null
     private var mQuestions: MutableList<User> = ArrayList()
 
 
@@ -40,7 +39,7 @@ class MainActivityForRetrofit : AppCompatActivity() {
     }
 
     private fun fetchQuestionList() {
-        val call = mApiService!!.fetchQuestions("android");
+        val call = mApiService!!.fetchQuestions("android")
         call.enqueue(object : Callback<UserList> {
 
             override fun onResponse(call: Call<UserList>, response: Response<UserList>) {
