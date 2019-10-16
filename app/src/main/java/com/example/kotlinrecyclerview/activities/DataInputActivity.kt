@@ -3,16 +3,22 @@ package com.example.kotlinrecyclerview.activities
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.widget.Toast
 import com.example.kotlinrecyclerview.DatabaseUsers
 import com.example.kotlinrecyclerview.R
+import com.example.kotlinrecyclerview.adapter.ListAdapterForRetrofit
+import com.example.kotlinrecyclerview.adapter.ListAdapterForRoom
 import com.example.kotlinrecyclerview.model.User
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main_for_retrofit.*
+import java.util.ArrayList
 
 class DataInputActivity : AppCompatActivity() {
-
     private var databaseUsers: DatabaseUsers? = null
+    private var mAdapter: ListAdapterForRoom? = null
+    private var mQuestions: MutableList<User> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,11 +26,13 @@ class DataInputActivity : AppCompatActivity() {
 
         databaseUsers = DatabaseUsers.getDatabase(this)!!
 
-        var bundleIdString = intent.getStringExtra("key_id")
+        val bundleIdString = intent.getStringExtra("key_id")
+
+        listRecyclerViewForRoom!!.layoutManager = LinearLayoutManager(this)
 
         buttonAdd.setOnClickListener {
             //users.add(User(editTextName.text.toString(), editTextAddress.text.toString(), ))
-            if (!editTextName.text.toString().isEmpty() || !editTextAddress.text.toString().isEmpty()) {
+            if (editTextName.text.toString().isNotEmpty() || editTextAddress.text.toString().isNotEmpty()) {
                 val userForInsert = User(
                     bundleIdString,
                     editTextName.text.toString(),
@@ -61,11 +69,11 @@ class DataInputActivity : AppCompatActivity() {
             return context.databaseUsers!!.userDao().getAllUsers()
         }
 
-        override fun onPostExecute(result: List<User>?) {
-            //Log.e("Count===", "" + result?.size)
-            Toast.makeText(context,"Database Entries="+result?.size,Toast.LENGTH_SHORT).show()
+        override fun onPostExecute(result: List<User>) {
+            context.textViewDbCount.text = "Database Entries=" + result?.size
+            context.mAdapter = ListAdapterForRoom(context, result, R.layout.question_item)
+            context.listRecyclerViewForRoom!!.adapter = context.mAdapter
+            context.mAdapter!!.notifyDataSetChanged()
         }
-
     }
-
 }

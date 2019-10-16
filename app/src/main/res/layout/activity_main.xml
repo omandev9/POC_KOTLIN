@@ -1,37 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <EditText
             android:id="@+id/editTextName"
-            android:hint="Name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="Name" />
 
     <EditText
             android:id="@+id/editTextAddress"
-            android:hint="Address"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="Address" />
 
     <Button
             android:id="@+id/buttonAdd"
-            android:text="Add to List"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Add to List" />
 
     <Button
             android:id="@+id/buttonGet"
-            android:text="Get Database Count"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Get Database Count" />
+
+    <TextView
+            android:id="@+id/textViewDbCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/listRecyclerViewForRoom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
