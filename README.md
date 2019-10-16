@@ -5,6 +5,7 @@ POC_KOTLIN
 4. Room Database
 
 Upcoming features
+
 5. MVVM and data binding
+
 6. Navigation component
-7.
