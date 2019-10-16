@@ -23,7 +23,6 @@ class MainActivityForRetrofit : AppCompatActivity() {
     private var mAdapter: ListAdapterForRetrofit?= null
     private var mQuestions: MutableList<User> = ArrayList()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_for_retrofit)

@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -35,4 +37,8 @@ dependencies {
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    // Room dependencies
+    implementation 'androidx.room:room-runtime:2.2.0'
+    kapt 'androidx.room:room-compiler:2.2.0'
 }

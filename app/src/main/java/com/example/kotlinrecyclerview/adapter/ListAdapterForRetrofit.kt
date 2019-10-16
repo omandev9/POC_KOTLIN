@@ -24,12 +24,16 @@ class ListAdapterForRetrofit(
     }
 
     override fun onBindViewHolder(holder: QuestionViewHolder, position: Int) {
-        holder.title.text = mQuestions[position].title
-        holder.link.text = mQuestions[position].link
-        holder.positionNumber.text = mQuestions[position].question_id
+        var currentModel = mQuestions[position]
+        holder.title.text = currentModel.title
+        holder.link.text = currentModel.link
+        holder.positionNumber.text = currentModel.question_id
         holder.containerView.setOnClickListener {
-            Toast.makeText(context, "Clicked on: " + holder.title.text, Toast.LENGTH_SHORT).show()
-            context.startActivity(Intent(context, DataInputActivity::class.java))
+            Toast.makeText(context, "Clicked on: " + holder.positionNumber.text, Toast.LENGTH_SHORT)
+                .show()
+            var intent = Intent(context, DataInputActivity::class.java)
+            intent.putExtra("key_id", holder.positionNumber.text.toString())
+            context.startActivity(intent)
         }
     }
 
