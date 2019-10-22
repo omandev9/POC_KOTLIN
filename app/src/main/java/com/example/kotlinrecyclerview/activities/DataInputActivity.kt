@@ -4,15 +4,12 @@ import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import android.widget.Toast
 import com.example.kotlinrecyclerview.DatabaseUsers
 import com.example.kotlinrecyclerview.R
-import com.example.kotlinrecyclerview.adapter.ListAdapterForRetrofit
-import com.example.kotlinrecyclerview.adapter.ListAdapterForRoom
+import com.example.kotlinrecyclerview.adapters.ListAdapterForRoom
 import com.example.kotlinrecyclerview.model.User
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main_for_retrofit.*
 import java.util.ArrayList
 
 class DataInputActivity : AppCompatActivity() {
@@ -70,10 +67,10 @@ class DataInputActivity : AppCompatActivity() {
         }
 
         override fun onPostExecute(result: List<User>) {
-            context.textViewDbCount.text = "Database Entries=" + result?.size
+            context.textViewDbCount.text = "Database Entries=" + result.size
             context.mAdapter = ListAdapterForRoom(context, result, R.layout.question_item)
             context.listRecyclerViewForRoom!!.adapter = context.mAdapter
-            context.mAdapter!!.notifyDataSetChanged()
+            //context.mAdapter!!.notifyDataSetChanged()
         }
     }
 }

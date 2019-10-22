@@ -1,4 +1,4 @@
-package com.example.kotlinrecyclerview.adapter
+package com.example.kotlinrecyclerview.adapters
 
 import android.content.Context
 import android.content.Intent

@@ -1,5 +1,6 @@
 package com.example.kotlinrecyclerview
 
+import android.arch.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -12,6 +13,6 @@ interface UserDao {
     fun insert(user: User)
 
     @Query("SELECT * FROM UserTable")
-    fun  getAllUsers():List<User>
+    fun  getAllUsers(): LiveData<List<User>>
 
 }
