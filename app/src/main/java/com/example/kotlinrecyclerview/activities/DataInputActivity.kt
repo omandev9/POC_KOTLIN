@@ -1,5 +1,6 @@
 package com.example.kotlinrecyclerview.activities
 
+import android.arch.lifecycle.LiveData
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -61,15 +62,15 @@ class DataInputActivity : AppCompatActivity() {
     }
 
     private class GetAllUsersAsyncTask(var context: DataInputActivity) :
-        AsyncTask<Void, Void, List<User>>() {
-        override fun doInBackground(vararg params: Void?): List<User> {
+        AsyncTask<Void, Void, LiveData<List<User>>>() {
+        override fun doInBackground(vararg params: Void?): LiveData<List<User>> {
             return context.databaseUsers!!.userDao().getAllUsers()
         }
 
-        override fun onPostExecute(result: List<User>) {
-            context.textViewDbCount.text = "Database Entries=" + result.size
-            context.mAdapter = ListAdapterForRoom(context, result, R.layout.question_item)
-            context.listRecyclerViewForRoom!!.adapter = context.mAdapter
+        override fun onPostExecute(result: LiveData<List<User>>) {
+            //context.textViewDbCount.text = "Database Entries=" + result.size
+            //context.mAdapter = ListAdapterForRoom(context, result, R.layout.question_item)
+            //context.listRecyclerViewForRoom!!.adapter = context.mAdapter
             //context.mAdapter!!.notifyDataSetChanged()
         }
     }

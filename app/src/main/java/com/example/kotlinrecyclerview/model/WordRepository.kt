@@ -9,7 +9,7 @@ import com.example.kotlinrecyclerview.UserDao
 class WordRepository internal constructor(application: Application) {
     private val wordDao: UserDao
 //    internal val allWords: LiveData<List<User>>
-    internal val allWords: LiveData<List<User>>
+    val allWords: LiveData<List<User>>
 
     init {
         val db = DatabaseUsers.getDatabase(application)
