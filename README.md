@@ -1,11 +1,17 @@
 POC_KOTLIN
 1. Kotlin 
-2. Retrofit 
-3. RecyclerView
-4. Room Database
+2. MVVM Architecture
+3. Retrofit 
+4. RecyclerView
+5. Room Database
 
-Upcoming features
 
-5. MVVM and data binding
+Pending features
 
-6. Navigation component
+6. LiveData
+
+7. UI and Unite test cases
+
+8. Data binding
+
+9. Navigation component
